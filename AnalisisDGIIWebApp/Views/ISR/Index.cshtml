@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Impuestos Sobre la Renta";
+}
+
+<h2>Impuestos Sobre la Renta</h2>
+<br />
+<br />
+<h3>Subir archivo para actualizar DB</h3>
+<br />
+@using (Html.BeginForm("CargarCSV", "ISR", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <div>
+        @Html.TextBox("file", "", new { type = "file" }) <br />
+        <input type="submit" value="Upload" />
+        @ViewBag.Message
+    </div>
+}
