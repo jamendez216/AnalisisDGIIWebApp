@@ -4,28 +4,18 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5855bb8ac9a4475fa180a92995f88541" Name="Diagram1">
-        <EntityTypeShape EntityType="DGIIModel.CARCLASS" Width="1.5" PointX="3.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.CARCOMPANY" Width="1.5" PointX="3.75" PointY="9.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.CARORIGIN" Width="1.5" PointX="3.75" PointY="11.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.CARTYPE" Width="1.5" PointX="3.75" PointY="14.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.CASHCOLLECTION" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.CONCEPT" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.ISR" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.MONTH" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.SUBCONCEPT" Width="1.5" PointX="0.75" PointY="7.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.USER" Width="1.5" PointX="5.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.VEHICULARPARK" Width="1.5" PointX="6" PointY="3" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.CashCollectionView" Width="1.5" PointX="7.75" PointY="7.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DGIIModel.VehicularParkView" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
-        <AssociationConnector Association="DGIIModel.FK__VEHICULAR__CarCl__3A4CA8FD" ManuallyRouted="false" />
-        <AssociationConnector Association="DGIIModel.FK__VEHICULAR__CarCo__3D2915A8" ManuallyRouted="false" />
-        <AssociationConnector Association="DGIIModel.FK__VEHICULAR__CarOr__3C34F16F" ManuallyRouted="false" />
-        <AssociationConnector Association="DGIIModel.FK__VEHICULAR__CarTy__3B40CD36" ManuallyRouted="false" />
+      <Diagram DiagramId="4a17cd5ca2ea4bbe9443171d95d5792a" Name="Diagram1">
+        <EntityTypeShape EntityType="DGIIModel.CASHCOLLECTION" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.CONCEPT" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.ISR" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.MONTH" Width="1.5" PointX="0.75" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.SUBCONCEPT" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.USER" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.CashCollectionView" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DGIIModel.VehicularParkView" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
         <AssociationConnector Association="DGIIModel.FK__CASHCOLLE__Conce__65370702" ManuallyRouted="false" />
         <AssociationConnector Association="DGIIModel.FK__CASHCOLLE__Month__671F4F74" ManuallyRouted="false" />
         <AssociationConnector Association="DGIIModel.FK__CASHCOLLE__SubCo__662B2B3B" ManuallyRouted="false" />
-        <AssociationConnector Association="DGIIModel.FK__VEHICULAR__Month__395884C4" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -18,7 +18,6 @@ namespace AnalisisDGII.EL.Database
         public MONTH()
         {
             this.CASHCOLLECTIONs = new HashSet<CASHCOLLECTION>();
-            this.VEHICULARPARKs = new HashSet<VEHICULARPARK>();
         }
     
         public int MonthID { get; set; }
@@ -26,7 +25,5 @@ namespace AnalisisDGII.EL.Database
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CASHCOLLECTION> CASHCOLLECTIONs { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VEHICULARPARK> VEHICULARPARKs { get; set; }
     }
 }

@@ -5,34 +5,6 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="DGIIModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="CARCLASSES">
-          <Key>
-            <PropertyRef Name="CarClassID" />
-          </Key>
-          <Property Name="CarClassID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CarClassDescription" Type="nvarchar" MaxLength="150" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CARCOMPANY">
-          <Key>
-            <PropertyRef Name="CarComapanyID" />
-          </Key>
-          <Property Name="CarComapanyID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CarComapanyDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CARORIGIN">
-          <Key>
-            <PropertyRef Name="CarOriginID" />
-          </Key>
-          <Property Name="CarOriginID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CarOriginDescription" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
-        <EntityType Name="CARTYPE">
-          <Key>
-            <PropertyRef Name="CarTypeID" />
-          </Key>
-          <Property Name="CarTypeID" Type="int" Nullable="false" />
-          <Property Name="CarTypeName" Type="nvarchar" MaxLength="100" Nullable="false" />
-        </EntityType>
         <EntityType Name="CASHCOLLECTION">
           <Key>
             <PropertyRef Name="CashCollectionID" />
@@ -83,21 +55,6 @@
           <Property Name="EMail" Type="varchar" MaxLength="30" />
           <Property Name="PasswordHash" Type="varbinary(max)" />
           <Property Name="PasswordSalt" Type="varbinary(max)" />
-        </EntityType>
-        <EntityType Name="VEHICULARPARK">
-          <Key>
-            <PropertyRef Name="VehicularParkID" />
-          </Key>
-          <Property Name="VehicularParkID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="InscriptionYear" Type="int" Nullable="false" />
-          <Property Name="MonthID" Type="int" Nullable="false" />
-          <Property Name="EntranceYear" Type="int" Nullable="false" />
-          <Property Name="CarClassID" Type="int" Nullable="false" />
-          <Property Name="CarTypeID" Type="int" Nullable="false" />
-          <Property Name="FabricationYear" Type="int" Nullable="false" />
-          <Property Name="CarOriginID" Type="int" Nullable="false" />
-          <Property Name="CarCompanyID" Type="int" Nullable="false" />
-          <Property Name="Quantity" Type="numeric" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'ANALISIS_DGII.dbo.CashCollectionView' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -175,78 +132,13 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VEHICULAR__CarCl__3A4CA8FD">
-          <End Role="CARCLASSES" Type="Self.CARCLASSES" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARCLASSES">
-              <PropertyRef Name="CarClassID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarClassID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__CarCo__3D2915A8">
-          <End Role="CARCOMPANY" Type="Self.CARCOMPANY" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARCOMPANY">
-              <PropertyRef Name="CarComapanyID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarCompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__CarOr__3C34F16F">
-          <End Role="CARORIGIN" Type="Self.CARORIGIN" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARORIGIN">
-              <PropertyRef Name="CarOriginID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarOriginID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__CarTy__3B40CD36">
-          <End Role="CARTYPE" Type="Self.CARTYPE" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARTYPE">
-              <PropertyRef Name="CarTypeID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__Month__395884C4">
-          <End Role="MONTHS" Type="Self.MONTHS" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MONTHS">
-              <PropertyRef Name="MonthID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="MonthID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DGIIModelStoreContainer">
-          <EntitySet Name="CARCLASSES" EntityType="Self.CARCLASSES" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CARCOMPANY" EntityType="Self.CARCOMPANY" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CARORIGIN" EntityType="Self.CARORIGIN" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CARTYPE" EntityType="Self.CARTYPE" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CASHCOLLECTION" EntityType="Self.CASHCOLLECTION" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CONCEPT" EntityType="Self.CONCEPT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ISR" EntityType="Self.ISR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="MONTHS" EntityType="Self.MONTHS" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SUBCONCEPT" EntityType="Self.SUBCONCEPT" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="USERS" EntityType="Self.USERS" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="VEHICULARPARK" EntityType="Self.VEHICULARPARK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CashCollectionView" EntityType="Self.CashCollectionView" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [CashCollectionView].[Concept] AS [Concept], 
@@ -281,64 +173,12 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
             <End Role="SUBCONCEPT" EntitySet="SUBCONCEPT" />
             <End Role="CASHCOLLECTION" EntitySet="CASHCOLLECTION" />
           </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarCl__3A4CA8FD" Association="Self.FK__VEHICULAR__CarCl__3A4CA8FD">
-            <End Role="CARCLASSES" EntitySet="CARCLASSES" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARK" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarCo__3D2915A8" Association="Self.FK__VEHICULAR__CarCo__3D2915A8">
-            <End Role="CARCOMPANY" EntitySet="CARCOMPANY" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARK" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarOr__3C34F16F" Association="Self.FK__VEHICULAR__CarOr__3C34F16F">
-            <End Role="CARORIGIN" EntitySet="CARORIGIN" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARK" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarTy__3B40CD36" Association="Self.FK__VEHICULAR__CarTy__3B40CD36">
-            <End Role="CARTYPE" EntitySet="CARTYPE" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARK" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__Month__395884C4" Association="Self.FK__VEHICULAR__Month__395884C4">
-            <End Role="MONTHS" EntitySet="MONTHS" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARK" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="DGIIModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="CARCLASS">
-          <Key>
-            <PropertyRef Name="CarClassID" />
-          </Key>
-          <Property Name="CarClassID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CarClassDescription" Type="String" MaxLength="150" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="VEHICULARPARKs" Relationship="Self.FK__VEHICULAR__CarCl__3A4CA8FD" FromRole="CARCLASSES" ToRole="VEHICULARPARK" />
-        </EntityType>
-        <EntityType Name="CARCOMPANY">
-          <Key>
-            <PropertyRef Name="CarComapanyID" />
-          </Key>
-          <Property Name="CarComapanyID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CarComapanyDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="VEHICULARPARKs" Relationship="Self.FK__VEHICULAR__CarCo__3D2915A8" FromRole="CARCOMPANY" ToRole="VEHICULARPARK" />
-        </EntityType>
-        <EntityType Name="CARORIGIN">
-          <Key>
-            <PropertyRef Name="CarOriginID" />
-          </Key>
-          <Property Name="CarOriginID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CarOriginDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="VEHICULARPARKs" Relationship="Self.FK__VEHICULAR__CarOr__3C34F16F" FromRole="CARORIGIN" ToRole="VEHICULARPARK" />
-        </EntityType>
-        <EntityType Name="CARTYPE">
-          <Key>
-            <PropertyRef Name="CarTypeID" />
-          </Key>
-          <Property Name="CarTypeID" Type="Int32" Nullable="false" />
-          <Property Name="CarTypeName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="VEHICULARPARKs" Relationship="Self.FK__VEHICULAR__CarTy__3B40CD36" FromRole="CARTYPE" ToRole="VEHICULARPARK" />
-        </EntityType>
         <EntityType Name="CASHCOLLECTION">
           <Key>
             <PropertyRef Name="CashCollectionID" />
@@ -377,7 +217,6 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
           <Property Name="MonthID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="MonthDesc" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="CASHCOLLECTIONs" Relationship="Self.FK__CASHCOLLE__Month__671F4F74" FromRole="MONTHS" ToRole="CASHCOLLECTION" />
-          <NavigationProperty Name="VEHICULARPARKs" Relationship="Self.FK__VEHICULAR__Month__395884C4" FromRole="MONTHS" ToRole="VEHICULARPARK" />
         </EntityType>
         <EntityType Name="SUBCONCEPT">
           <Key>
@@ -396,26 +235,6 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
           <Property Name="EMail" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="PasswordHash" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="PasswordSalt" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="VEHICULARPARK">
-          <Key>
-            <PropertyRef Name="VehicularParkID" />
-          </Key>
-          <Property Name="VehicularParkID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="InscriptionYear" Type="Int32" Nullable="false" />
-          <Property Name="MonthID" Type="Int32" Nullable="false" />
-          <Property Name="EntranceYear" Type="Int32" Nullable="false" />
-          <Property Name="CarClassID" Type="Int32" Nullable="false" />
-          <Property Name="CarTypeID" Type="Int32" Nullable="false" />
-          <Property Name="FabricationYear" Type="Int32" Nullable="false" />
-          <Property Name="CarOriginID" Type="Int32" Nullable="false" />
-          <Property Name="CarCompanyID" Type="Int32" Nullable="false" />
-          <Property Name="Quantity" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
-          <NavigationProperty Name="CARCLASS" Relationship="Self.FK__VEHICULAR__CarCl__3A4CA8FD" FromRole="VEHICULARPARK" ToRole="CARCLASSES" />
-          <NavigationProperty Name="CARCOMPANY" Relationship="Self.FK__VEHICULAR__CarCo__3D2915A8" FromRole="VEHICULARPARK" ToRole="CARCOMPANY" />
-          <NavigationProperty Name="CARORIGIN" Relationship="Self.FK__VEHICULAR__CarOr__3C34F16F" FromRole="VEHICULARPARK" ToRole="CARORIGIN" />
-          <NavigationProperty Name="CARTYPE" Relationship="Self.FK__VEHICULAR__CarTy__3B40CD36" FromRole="VEHICULARPARK" ToRole="CARTYPE" />
-          <NavigationProperty Name="MONTH" Relationship="Self.FK__VEHICULAR__Month__395884C4" FromRole="VEHICULARPARK" ToRole="MONTHS" />
         </EntityType>
         <EntityType Name="CashCollectionView">
           <Key>
@@ -453,54 +272,6 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
           <Property Name="CarComapanyDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Quantity" Type="Decimal" Precision="10" Scale="0" Nullable="false" />
         </EntityType>
-        <Association Name="FK__VEHICULAR__CarCl__3A4CA8FD">
-          <End Role="CARCLASSES" Type="Self.CARCLASS" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARCLASSES">
-              <PropertyRef Name="CarClassID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarClassID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__CarCo__3D2915A8">
-          <End Role="CARCOMPANY" Type="Self.CARCOMPANY" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARCOMPANY">
-              <PropertyRef Name="CarComapanyID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarCompanyID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__CarOr__3C34F16F">
-          <End Role="CARORIGIN" Type="Self.CARORIGIN" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARORIGIN">
-              <PropertyRef Name="CarOriginID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarOriginID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK__VEHICULAR__CarTy__3B40CD36">
-          <End Role="CARTYPE" Type="Self.CARTYPE" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="CARTYPE">
-              <PropertyRef Name="CarTypeID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="CarTypeID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__CASHCOLLE__Conce__65370702">
           <End Role="CONCEPT" Type="Self.CONCEPT" Multiplicity="1" />
           <End Role="CASHCOLLECTION" Type="Self.CASHCOLLECTION" Multiplicity="*" />
@@ -537,48 +308,15 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__VEHICULAR__Month__395884C4">
-          <End Role="MONTHS" Type="Self.MONTH" Multiplicity="1" />
-          <End Role="VEHICULARPARK" Type="Self.VEHICULARPARK" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="MONTHS">
-              <PropertyRef Name="MonthID" />
-            </Principal>
-            <Dependent Role="VEHICULARPARK">
-              <PropertyRef Name="MonthID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityContainer Name="DGIIEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="CARCLASSES" EntityType="Self.CARCLASS" />
-          <EntitySet Name="CARCOMPANies" EntityType="Self.CARCOMPANY" />
-          <EntitySet Name="CARORIGINs" EntityType="Self.CARORIGIN" />
-          <EntitySet Name="CARTYPEs" EntityType="Self.CARTYPE" />
           <EntitySet Name="CASHCOLLECTIONs" EntityType="Self.CASHCOLLECTION" />
           <EntitySet Name="CONCEPTs" EntityType="Self.CONCEPT" />
           <EntitySet Name="ISRs" EntityType="Self.ISR" />
           <EntitySet Name="MONTHS" EntityType="Self.MONTH" />
           <EntitySet Name="SUBCONCEPTs" EntityType="Self.SUBCONCEPT" />
           <EntitySet Name="USERS" EntityType="Self.USER" />
-          <EntitySet Name="VEHICULARPARKs" EntityType="Self.VEHICULARPARK" />
           <EntitySet Name="CashCollectionViews" EntityType="Self.CashCollectionView" />
           <EntitySet Name="VehicularParkViews" EntityType="Self.VehicularParkView" />
-          <AssociationSet Name="FK__VEHICULAR__CarCl__3A4CA8FD" Association="Self.FK__VEHICULAR__CarCl__3A4CA8FD">
-            <End Role="CARCLASSES" EntitySet="CARCLASSES" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARKs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarCo__3D2915A8" Association="Self.FK__VEHICULAR__CarCo__3D2915A8">
-            <End Role="CARCOMPANY" EntitySet="CARCOMPANies" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARKs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarOr__3C34F16F" Association="Self.FK__VEHICULAR__CarOr__3C34F16F">
-            <End Role="CARORIGIN" EntitySet="CARORIGINs" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARKs" />
-          </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__CarTy__3B40CD36" Association="Self.FK__VEHICULAR__CarTy__3B40CD36">
-            <End Role="CARTYPE" EntitySet="CARTYPEs" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARKs" />
-          </AssociationSet>
           <AssociationSet Name="FK__CASHCOLLE__Conce__65370702" Association="Self.FK__CASHCOLLE__Conce__65370702">
             <End Role="CONCEPT" EntitySet="CONCEPTs" />
             <End Role="CASHCOLLECTION" EntitySet="CASHCOLLECTIONs" />
@@ -591,10 +329,6 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
             <End Role="SUBCONCEPT" EntitySet="SUBCONCEPTs" />
             <End Role="CASHCOLLECTION" EntitySet="CASHCOLLECTIONs" />
           </AssociationSet>
-          <AssociationSet Name="FK__VEHICULAR__Month__395884C4" Association="Self.FK__VEHICULAR__Month__395884C4">
-            <End Role="MONTHS" EntitySet="MONTHS" />
-            <End Role="VEHICULARPARK" EntitySet="VEHICULARPARKs" />
-          </AssociationSet>
         </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
@@ -602,38 +336,6 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="DGIIModelStoreContainer" CdmEntityContainer="DGIIEntities">
-          <EntitySetMapping Name="CARCLASSES">
-            <EntityTypeMapping TypeName="DGIIModel.CARCLASS">
-              <MappingFragment StoreEntitySet="CARCLASSES">
-                <ScalarProperty Name="CarClassID" ColumnName="CarClassID" />
-                <ScalarProperty Name="CarClassDescription" ColumnName="CarClassDescription" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CARCOMPANies">
-            <EntityTypeMapping TypeName="DGIIModel.CARCOMPANY">
-              <MappingFragment StoreEntitySet="CARCOMPANY">
-                <ScalarProperty Name="CarComapanyID" ColumnName="CarComapanyID" />
-                <ScalarProperty Name="CarComapanyDescription" ColumnName="CarComapanyDescription" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CARORIGINs">
-            <EntityTypeMapping TypeName="DGIIModel.CARORIGIN">
-              <MappingFragment StoreEntitySet="CARORIGIN">
-                <ScalarProperty Name="CarOriginID" ColumnName="CarOriginID" />
-                <ScalarProperty Name="CarOriginDescription" ColumnName="CarOriginDescription" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="CARTYPEs">
-            <EntityTypeMapping TypeName="DGIIModel.CARTYPE">
-              <MappingFragment StoreEntitySet="CARTYPE">
-                <ScalarProperty Name="CarTypeID" ColumnName="CarTypeID" />
-                <ScalarProperty Name="CarTypeName" ColumnName="CarTypeName" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CASHCOLLECTIONs">
             <EntityTypeMapping TypeName="DGIIModel.CASHCOLLECTION">
               <MappingFragment StoreEntitySet="CASHCOLLECTION">
@@ -687,22 +389,6 @@ warning 6002: The table/view 'ANALISIS_DGII.dbo.VehicularParkView' does not have
                 <ScalarProperty Name="EMail" ColumnName="EMail" />
                 <ScalarProperty Name="PasswordHash" ColumnName="PasswordHash" />
                 <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="VEHICULARPARKs">
-            <EntityTypeMapping TypeName="DGIIModel.VEHICULARPARK">
-              <MappingFragment StoreEntitySet="VEHICULARPARK">
-                <ScalarProperty Name="VehicularParkID" ColumnName="VehicularParkID" />
-                <ScalarProperty Name="InscriptionYear" ColumnName="InscriptionYear" />
-                <ScalarProperty Name="MonthID" ColumnName="MonthID" />
-                <ScalarProperty Name="EntranceYear" ColumnName="EntranceYear" />
-                <ScalarProperty Name="CarClassID" ColumnName="CarClassID" />
-                <ScalarProperty Name="CarTypeID" ColumnName="CarTypeID" />
-                <ScalarProperty Name="FabricationYear" ColumnName="FabricationYear" />
-                <ScalarProperty Name="CarOriginID" ColumnName="CarOriginID" />
-                <ScalarProperty Name="CarCompanyID" ColumnName="CarCompanyID" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

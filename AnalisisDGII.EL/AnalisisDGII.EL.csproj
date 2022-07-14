@@ -50,18 +50,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\CARCLASS.cs">
-      <DependentUpon>DGIIEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Database\CARCOMPANY.cs">
-      <DependentUpon>DGIIEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Database\CARORIGIN.cs">
-      <DependentUpon>DGIIEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Database\CARTYPE.cs">
-      <DependentUpon>DGIIEntities.tt</DependentUpon>
-    </Compile>
     <Compile Include="Database\CASHCOLLECTION.cs">
       <DependentUpon>DGIIEntities.tt</DependentUpon>
     </Compile>
@@ -96,9 +84,6 @@
       <DependentUpon>DGIIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\USER.cs">
-      <DependentUpon>DGIIEntities.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Database\VEHICULARPARK.cs">
       <DependentUpon>DGIIEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Database\VehicularParkView.cs">

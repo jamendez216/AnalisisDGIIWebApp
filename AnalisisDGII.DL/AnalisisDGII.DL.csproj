@@ -61,10 +61,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Data\CarClassData.cs" />
-    <Compile Include="Data\CarCompanyData.cs" />
-    <Compile Include="Data\CarOriginData.cs" />
-    <Compile Include="Data\CarTypeData.cs" />
     <Compile Include="Data\ConceptData.cs" />
     <Compile Include="Data\ISRData.cs" />
     <Compile Include="Data\RecaudacionEfectivaData.cs" />
@@ -72,7 +68,6 @@
     <Compile Include="Data\UserData.cs" />
     <Compile Include="Generic\CRUDModel.cs" />
     <Compile Include="Generic\ICRUDModel.cs" />
-    <Compile Include="Data\ParqueVehicularData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

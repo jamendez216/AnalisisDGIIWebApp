@@ -128,7 +128,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\ISRController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\ParqueVehicularController.cs" />
     <Compile Include="Controllers\RecaudacionEfectivaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -173,7 +172,6 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\ParqueVehicular\Index.cshtml" />
     <Content Include="Views\RecaudacionEfectiva\Index.cshtml" />
     <Content Include="Views\ISR\Index.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />

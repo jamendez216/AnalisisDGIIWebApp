@@ -25,17 +25,12 @@ namespace AnalisisDGII.EL.Database
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<CARCLASS> CARCLASSES { get; set; }
-        public virtual DbSet<CARCOMPANY> CARCOMPANies { get; set; }
-        public virtual DbSet<CARORIGIN> CARORIGINs { get; set; }
-        public virtual DbSet<CARTYPE> CARTYPEs { get; set; }
         public virtual DbSet<CASHCOLLECTION> CASHCOLLECTIONs { get; set; }
         public virtual DbSet<CONCEPT> CONCEPTs { get; set; }
         public virtual DbSet<ISR> ISRs { get; set; }
         public virtual DbSet<MONTH> MONTHS { get; set; }
         public virtual DbSet<SUBCONCEPT> SUBCONCEPTs { get; set; }
         public virtual DbSet<USER> USERS { get; set; }
-        public virtual DbSet<VEHICULARPARK> VEHICULARPARKs { get; set; }
         public virtual DbSet<CashCollectionView> CashCollectionViews { get; set; }
         public virtual DbSet<VehicularParkView> VehicularParkViews { get; set; }
     }
