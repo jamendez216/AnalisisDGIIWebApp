@@ -67,10 +67,10 @@ namespace AnalisisDGII.BL.RecaudacionEfectiva
                                 rowInserted.MonthID = (int)Months.Julio;
                                 break;
                             case "Agosto":
-                                rowInserted.MonthID = (int)Months.Mayo;
+                                rowInserted.MonthID = (int)Months.Agosto;
                                 break;
                             case "Septiembre":
-                                rowInserted.MonthID = (int)Months.Mayo;
+                                rowInserted.MonthID = (int)Months.Septiembre;
                                 break;
                             case "Octubre":
                                 rowInserted.MonthID = (int)Months.Octubre;
