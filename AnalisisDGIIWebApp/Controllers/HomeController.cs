@@ -42,7 +42,8 @@ namespace AnalisisDGIIWebApp.Controllers
 
                 if (service.EmailExists(Memail))
                 {
-                    return View();
+                    ModelState.AddModelError("", "El email ya está en uso");
+                    return View(model);
                 }
 
                 CreatePasswordHash(model.Password, out byte[] passwordHash, out byte[] passwordSalt);
@@ -54,9 +55,10 @@ namespace AnalisisDGIIWebApp.Controllers
                     PasswordSalt = passwordSalt
                 };
                 service.CreateUser(user);
-                return View();
+                return RedirectToAction("Login");
             }
-            return View();
+            ModelState.AddModelError("", "Error al registrar cuenta.");
+            return View(model);
         }
 
         [HttpPost]

@@ -10,13 +10,14 @@ namespace AnalisisDGIIWebApp.Models
     public class CreateUserViewModel
     {
         [Required]
-        [StringLength(100, MinimumLength = 6, ErrorMessage = "Userame value must be between 10 and 100 characters")]
+        [StringLength(100, MinimumLength = 6, ErrorMessage = "Username value must be between 6 and 100 characters")]
         public string Username { get; set; }
         [Required]
         [EmailAddress]
         public string EMail { get; set; }
         [Required]
         [DisplayName("Contraseña")]
+        [StringLength(100, MinimumLength = 4, ErrorMessage = "Password value must be between 4 and 100 characters")]
         public string Password { get; set; }
         [Required]
         [DisplayName("Confirmar Contraseña")]
