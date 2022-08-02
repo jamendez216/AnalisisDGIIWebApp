@@ -40,7 +40,12 @@ namespace AnalisisDGIIWebApp.Controllers
             }
             catch (Exception e)
             {
-                return View();
+                if (e.Message == "Invalid column headers for csv file")
+                {
+                    ModelState.AddModelError("", "Archivo incorrecto");
+                    return View("Index", ModelState);
+                }
+                throw e;
             }
         }
     }

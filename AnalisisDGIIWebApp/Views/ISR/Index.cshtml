@@ -9,6 +9,7 @@
 <br />
 @using (Html.BeginForm("CargarCSV", "ISR", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
     <div>
         @Html.TextBox("file", "", new { type = "file" }) <br />
         <input type="submit" value="Upload" />

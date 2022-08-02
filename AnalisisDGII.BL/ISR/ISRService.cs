@@ -22,6 +22,10 @@ namespace AnalisisDGII.BL.ISR
                     string headerline = fileStream.ReadLine();
                     string line;
                     int rowIndex = 1;
+                    if (headerline != "A�O FISCAL;SALARIO MENSUAL;RETENCION MENSUAL")
+                    {
+                        throw new Exception("Invalid column headers for csv file");
+                    }
                     //wipe out Database
                     DataL.ClearTable();
                     //Read every line until the row comes up null
@@ -55,9 +59,9 @@ namespace AnalisisDGII.BL.ISR
                     }
                 }
             }
-            catch
+            catch (Exception e)
             {
-
+                throw e;
             }
         }
     }
